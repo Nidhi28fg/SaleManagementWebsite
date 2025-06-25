@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager - Salary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+       
+        .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            filter: invert(40%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+        }
+        .sidebar-menu a.active .icon,
+        .sidebar-menu a:hover .icon {
+            filter: invert(30%) sepia(80%) saturate(1500%) hue-rotate(150deg) brightness(80%) contrast(100%);
+        }
+        .icon-dashboard { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>'); }
+        .icon-total-projects { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>'); }
+        .icon-working-projects { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>'); }
+        .icon-team-members { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>'); }
+        .icon-manager-report { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>'); }
+        .icon-team-report { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>'); }
+        .icon-received-data { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-database"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M21 19c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>'); }
+        .icon-transfer-data { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>'); }
+        .icon-review { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>'); }
+        .icon-salary { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>'); }
+
+        .main-content {
+            margin-left: 250px;
+            flex-grow: 1;
+            padding: 20px 40px;
+            width: calc(100% - 250px);
+        }
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .header-buttons {
+            display: flex;
+            align-items: center;
+        }
+        .header-buttons a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #00796b;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+        .header-buttons a:hover {
+            background-color: #004d40;
+        }
+
+        /* Dropdown for My Profile */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .dropdown-button {
+            background-color: #00796b;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        .dropdown-button:hover {
+            background-color: #004d40;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            margin-top: 5px;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            background-color: #f9f9f9;
+            border-radius: 0;
+            margin-left: 0;
+        }
+        .dropdown-content a:hover {
+            background-color: #e0f2f1;
+            color: #00796b;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-arrow {
+            margin-left: 8px;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid white;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .filter-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            max-width: fit-content;
+        }
+        .filter-section label {
+            font-size: 0.9em;
+            color: #555;
+        }
+        .filter-section select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.9em;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+            padding-right: 30px; /* Make space for arrow */
+            min-width: 120px;
+        }
+        .filter-section button {
+            background-color: #2196F3; /* Blue */
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+        .filter-section button:hover {
+            background-color: #1976D2;
+        }
+
+        .data-section {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .data-table th, .data-table td {
+            border: 1px solid #eee;
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 0.95em;
+        }
+        .data-table th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+            color: #555;
+        }
+        .data-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .data-table tr:hover {
+            background-color: #f0f0f0;
+        }
+        .data-table td.amount {
+            font-weight: 600;
+            color: #00796b; /* Teal */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="icons/logo.png" alt="Graphura Logo" class="logo">
+        <div class="user-profile">
+            <img src="icons/user.png" alt="User Profile Picture">
+            <div class="text-content">
+                <h3>Kamal Yadav</h3>
+                <p>Manager - Management</p>
+            </div>
+        </div>
+        <nav class="sidebar-menu">
+            <ul>
+                <li><a href="deshboard.html" ><span class="icon icon-dashboard"></span> Dashboard</a></li>
+                <li><a href="total-projects.html"><span class="icon icon-total-projects"></span> Total Projects</a></li>
+                <li><a href="working projects.html"><span class="icon icon-working-projects"></span> Working
+                        Projects</a></li>
+                <li><a href="teammember.html"><span class="icon icon-team-members"></span> Team Members</a></li>
+                <li><a href="managerreport.html"><span class="icon icon-manager-report"></span> Manager Report</a></li>
+                <li><a href="teamreport.html"><span class="icon icon-team-report"></span> Team Report</a></li>
+                <li><a href="received-data.html"><span class="icon icon-received-data"></span> Received Data</a></li>
+                <li><a href="transferfdbk.html"><span class="icon icon-transfer-data"></span> Transfer Data to FDBK.</a>
+                </li>
+                <li><a  href="review.html"><span class="icon icon-review"></span> Review</a></li>
+                <li><a class="active" href="salary.html"><span class="icon icon-salary"></span> Salary</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="header">
+            <div class="header-buttons">
+                <a href="#">Proposals</a>
+                <a href="#">Custom Plan</a>
+                <a href="#">Work Order</a>
+                <div class="dropdown">
+                    <button class="dropdown-button">
+                        <img src="" alt="" style="border-radius: 50%; margin-right: 5px;"> My Profile <span class="dropdown-arrow"></span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Profile Settings</a>
+                        <a href="#">Change Password</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <h1>Salary</h1>
+
+        <div class="filter-section">
+            <label for="month-filter">Month</label>
+            <select id="month-filter">
+                <option value="">Select Month</option>
+                <option value="jan">January</option>
+                <option value="feb">February</option>
+                <option value="mar">March</option>
+            </select>
+            <label for="tl-name-filter">TL Name</label>
+            <select id="tl-name-filter">
+                <option value="">Select TL</option>
+                <option value="tl1">TL One</option>
+                <option value="tl2">TL Two</option>
+            </select>
+            <button>Search</button>
+        </div>
+
+        <div class="data-section">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>TL Name</th>
+                        <th>Email_id</th>
+                        <th>Contact no.</th>
+                        <th>Duration</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td class="amount">4000/-</td>
+                    </tr>
+                    <tr>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td class="amount">Bold text column</td>
+                    </tr>
+                    <tr>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td class="amount">Bold text column</td>
+                    </tr>
+                    <tr>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td class="amount">Bold text column</td>
+                    </tr>
+                    <tr>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td>Bold text column</td>
+                        <td class="amount">Bold text column</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Sidebar active state
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
+
+            sidebarLinks.forEach(link => {
+                // Check if the link text content includes 'Salary'
+                if (link.textContent.includes('Salary')) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

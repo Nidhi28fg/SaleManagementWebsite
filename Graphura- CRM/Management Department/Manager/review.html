@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager - Review</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: #f4f7f6;
+            display: flex;
+            color: #333;
+        }
+        /* .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            height: 100vh;
+        }
+        .logo {
+            width: 150px;
+            margin-bottom: 30px;
+        }
+        .user-profile {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .user-profile img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #eee;
+            margin-bottom: 10px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .user-profile .text-content {
+            display: inline-block;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .user-profile h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .user-profile p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .sidebar-menu {
+            width: 100%;
+        }
+        .sidebar-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-menu li {
+            margin-bottom: 10px;
+        }
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #666;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .sidebar-menu a.active,
+        .sidebar-menu a:hover {
+            background-color: #e0f2f1; /* Light teal */
+            /* color: #00796b; Darker teal */
+        /* }
+        .sidebar-menu a i {
+            margin-right: 15px;
+            font-size: 1.2em;
+        } */ 
+
+        /* Icons for sidebar */
+        .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            filter: invert(40%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+        }
+        .sidebar-menu a.active .icon,
+        .sidebar-menu a:hover .icon {
+            filter: invert(30%) sepia(80%) saturate(1500%) hue-rotate(150deg) brightness(80%) contrast(100%);
+        }
+        .icon-dashboard { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>'); }
+        .icon-total-projects { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>'); }
+        .icon-working-projects { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>'); }
+        .icon-team-members { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>'); }
+        .icon-manager-report { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>'); }
+        .icon-team-report { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>'); }
+        .icon-received-data { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-database"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M21 19c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>'); }
+        .icon-transfer-data { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>'); }
+        .icon-review { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>'); }
+        .icon-salary { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>'); }
+
+        .main-content {
+            margin-left: 250px;
+            flex-grow: 1;
+            padding: 20px 40px;
+            width: calc(100% - 250px);
+        }
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .header-buttons {
+            display: flex;
+            align-items: center;
+        }
+        .header-buttons a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #00796b;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+        .header-buttons a:hover {
+            background-color: #004d40;
+        }
+
+        /* Dropdown for My Profile */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .dropdown-button {
+            background-color: #00796b;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        .dropdown-button:hover {
+            background-color: #004d40;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            margin-top: 5px;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            background-color: #f9f9f9;
+            border-radius: 0;
+            margin-left: 0;
+        }
+        .dropdown-content a:hover {
+            background-color: #e0f2f1;
+            color: #00796b;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-arrow {
+            margin-left: 8px;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid white;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        /* Project Item (Expandable Section) */
+        .project-item {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            padding-bottom: 15px; /* Add space for border */
+            border-bottom: 1px solid #eee; /* Separator */
+            margin-bottom: 15px;
+        }
+        .project-header span {
+            margin-right: 20px; /* Space between "Company Name" and "Invoice no." */
+        }
+        .project-header .toggle-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        .project-header.expanded .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .project-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding-top: 15px; /* Space above inputs */
+        }
+        .project-details .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .project-details .form-group label {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .project-details .form-group input[type="text"],
+        .project-details .form-group input[type="date"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #333;
+        }
+        .project-details .button-row {
+            grid-column: span 2; /* Span full width */
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .project-details .button-row button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        .project-details .button-row .btn-edit-team {
+            background-color: #007bff; /* Blue for Edit Team */
+            color: white;
+        }
+        .project-details .button-row .btn-edit-team:hover {
+            background-color: #0056b3;
+        }
+        .project-details .button-row .btn-view-team {
+            background-color: #6c757d; /* Gray for View Team */
+            color: white;
+        }
+        .project-details .button-row .btn-view-team:hover {
+            background-color: #5a6268;
+        }
+
+      .company-details-section {
+    display: flex
+;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    flex-direction: column;
+    align-items: center;
+}
+        .company-details-section h3 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .company-details-table {
+            width: 100%;
+            border-collapse: collapse;
+                display: flex
+;
+    flex-direction: column;
+    /* align-content: center; */
+    justify-content: center;
+    align-items: center;
+        }
+        .company-details-table th, .company-details-table td {
+            border: 1px solid #eee;
+            padding: 10px 15px;
+            text-align: left;
+            font-size: 0.9em;
+        }
+        .company-details-table th {
+            background-color: #f9f9f9;
+            font-weight: 600;
+            color: #555;
+        }
+        .company-details-table .actions-cell {
+    display: flex
+;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+        .company-details-table .actions-cell button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85em;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        .company-details-table .actions-cell .btn-video, .btn-message, .btn-download {
+            background-color: #2196F3; /* Blue */
+        }
+        .company-details-table .actions-cell .btn-video:hover, .btn-message:hover, .btn-download:hover {
+            background-color: #1976D2;
+        }
+        /* .company-details-table .actions-cell .btn-download {
+            background-color: #FFC107; 
+            color: #333;
+        }
+        .company-details-table .actions-cell .btn-download:hover {
+            background-color: #FFA000;
+        } */
+        .company-details-table .actions-cell .btn-upload {
+            background-color: #4CAF50; /* Green */
+        }
+        .company-details-table .actions-cell .btn-upload:hover {
+            background-color: #45a049;
+        }
+        /* .company-details-table .actions-cell .btn-message {
+            background-color: #9C27B0; 
+        }
+        .company-details-table .actions-cell .btn-message:hover {
+            background-color: #7B1FA2;
+        } */
+
+        .action-buttons-bottom {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .action-buttons-bottom button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            color: white;
+        }
+        .action-buttons-bottom .btn-approve {
+            background-color: #4CAF50; /* Green */
+        }
+        .action-buttons-bottom .btn-approve:hover {
+            background-color: #45a049;
+        }
+        .action-buttons-bottom .btn-resend {
+            background-color: #F44336; /* Red */
+        }
+        .action-buttons-bottom .btn-resend:hover {
+            background-color: #D32F2F;
+        }
+        
+        div.company-details-section > table > thead {
+width: 500px;
+        }
+        div.company-details-section > table > thead > tr > th:nth-child(1) {
+            width: 120px;
+        }
+        div.company-details-section > table > thead > tr > th:nth-child(2) {
+            width: 310px;
+        }
+
+td.actions-cell button {
+    width: 100px;
+}
+
+    </style>
+</head>
+<body>
+   <div class="sidebar">
+        <img src="icons/logo.png" alt="Graphura Logo" class="logo">
+        <div class="user-profile">
+            <img src="icons/user.png" alt="User Profile Picture">
+            <div class="text-content">
+                <h3>Kamal Yadav</h3>
+                <p>Manager - Management</p>
+            </div>
+        </div>
+        <nav class="sidebar-menu">
+            <ul>
+                <li><a href="deshboard.html" ><span class="icon icon-dashboard"></span> Dashboard</a></li>
+                <li><a href="total-projects.html"><span class="icon icon-total-projects"></span> Total Projects</a></li>
+                <li><a href="working projects.html"><span class="icon icon-working-projects"></span> Working
+                        Projects</a></li>
+                <li><a href="teammember.html"><span class="icon icon-team-members"></span> Team Members</a></li>
+                <li><a href="managerreport.html"><span class="icon icon-manager-report"></span> Manager Report</a></li>
+                <li><a href="teamreport.html"><span class="icon icon-team-report"></span> Team Report</a></li>
+                <li><a href="received-data.html"><span class="icon icon-received-data"></span> Received Data</a></li>
+                <li><a href="transferfdbk.html"><span class="icon icon-transfer-data"></span> Transfer Data to FDBK.</a>
+                </li>
+                <li><a class="active" href="review.html"><span class="icon icon-review"></span> Review</a></li>
+                <li><a href="salary.html"><span class="icon icon-salary"></span> Salary</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="header">
+            <div class="header-buttons">
+                <a href="#">Proposals</a>
+                <a href="#">Custom Plan</a>
+                <a href="#">Work Order</a>
+                <div class="dropdown">
+                    <button class="dropdown-button">
+                        <img src="" alt="" style="border-radius: 50%; margin-right: 5px;"> My Profile <span class="dropdown-arrow"></span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Profile Settings</a>
+                        <a href="#">Change Password</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <h1>Review</h1>
+
+        <div class="project-list">
+            <div class="project-item">
+                <div class="project-header" data-project-id="1">
+                    <span>1. Company Name</span>
+                    <span>Invoice no.</span>
+                    <span class="toggle-icon">&#9660;</span> </div>
+                <div class="project-details">
+                    <div class="form-group">
+                        <label for="client-name-1">Client Name</label>
+                        <input type="text" id="client-name-1" value="Bold text column">
+                    </div>
+                    <div class="form-group">
+                        <label for="designation-1">Designation</label>
+                        <input type="text" id="designation-1" value="Bold text column">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-no-1">Contact no.</label>
+                        <input type="text" id="contact-no-1" value="Bold text column">
+                    </div>
+                    <div class="form-group">
+                        <label for="email-id-1">Email_id</label>
+                        <input type="text" id="email-id-1" value="Bold text column">
+                    </div>
+                    <div class="form-group">
+                        <label for="start-date-1">Start Date</label>
+                        <input type="date" id="start-date-1" value="2024-01-01">
+                    </div>
+                    <div class="form-group">
+                        <label for="end-date-1">End Date</label>
+                        <input type="date" id="end-date-1" value="2024-03-31">
+                    </div>
+                    <div class="form-group">
+                        <label for="service-name-1">Service name</label>
+                        <input type="text" id="service-name-1" value="Bold text column">
+                    </div>
+                    <div class="button-row">
+                        <button class="btn-edit-team">Edit Team</button>
+                        <button class="btn-view-team">View Team</button>
+                    </div>
+
+                    <div class="company-details-section" style="grid-column: span 2;">
+                        <h3>Company Details</h3>
+                        <table class="company-details-table">
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Logo</td>
+                                    <td class="actions-cell">
+                                        <button class="btn-video">Video</button>
+                                        <button class="btn-download">Download</button>
+                                        <button class="btn-upload">Upload</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Banner</td>
+                                    <td class="actions-cell">
+                                        <button class="btn-message">Message</button>
+                                        <button class="btn-video">Video / Audio</button>
+                                        <button class="btn-upload">Upload</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Bold text column</td>
+                                    <td class="actions-cell">
+                                        <button class="btn-message">Message</button>
+                                        <button class="btn-video">Video / Audio</button>
+                                        <button class="btn-upload">Upload</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="action-buttons-bottom">
+                    <button class="btn-approve">Approve</button>
+                    <button class="btn-resend">Resend</button>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-header" data-project-id="2">
+                    <span>2. Company Name</span>
+                    <span>Invoice no.</span>
+                    <span class="toggle-icon">&#9660;</span> </div>
+                <div class="project-details" style="display: none;">
+                    <div class="form-group">
+                        <label for="client-name-2">Client Name</label>
+                        <input type="text" id="client-name-2" value="Bold text column">
+                    </div>
+                    <div class="form-group">
+                        <label for="designation-2">Designation</label>
+                        <input type="text" id="designation-2" value="Bold text column">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-no-2">Contact no.</label>
+                        <input type="text" id="contact-no-2" value="Bold text column">
+                    </div>
+                    <div class="form-group">
+                        <label for="email-id-2">Email_id</label>
+                        <input type="text" id="email-id-2" value="Bold text column">
+                    </div>
+                    <div class="form-group">
+                        <label for="start-date-2">Start Date</label>
+                        <input type="date" id="start-date-2" value="2024-04-01">
+                    </div>
+                    <div class="form-group">
+                        <label for="end-date-2">End Date</label>
+                        <input type="date" id="end-date-2" value="2024-06-30">
+                    </div>
+                    <div class="form-group">
+                        <label for="service-name-2">Service name</label>
+                        <input type="text" id="service-name-2" value="Bold text column">
+                    </div>
+                    <div class="button-row">
+                        <button class="btn-edit-team">Edit Team</button>
+                        <button class="btn-view-team">View Team</button>
+                    </div>
+
+                    <div class="company-details-section" style="grid-column: span 2;">
+                        <h3>Company Details</h3>
+                        <table class="company-details-table">
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Logo</td>
+                                    <td class="actions-cell">
+                                        <button class="btn-video">Video</button>
+                                        <button class="btn-download">Download</button>
+                                        <button class="btn-upload">Upload</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Banner</td>
+                                    <td class="actions-cell">
+                                        <button class="btn-message">Message</button>
+                                        <button class="btn-video">Video / Audio</button>
+                                        <button class="btn-upload">Upload</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Bold text column</td>
+                                    <td class="actions-cell">
+                                        <button class="btn-message">Message</button>
+                                        <button class="btn-video">Video / Audio</button>
+                                        <button class="btn-upload">Upload</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="action-buttons-bottom" style="display: none;">
+                    <button class="btn-approve">Approve</button>
+                    <button class="btn-resend">Resend</button>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <script>
+        // Sidebar active state
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
+
+            sidebarLinks.forEach(link => {
+                // Check if the link text content includes 'Review'
+                if (link.textContent.includes('Review')) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Toggle project details visibility
+            const projectHeaders = document.querySelectorAll('.project-header');
+
+            projectHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('expanded');
+                    const details = this.nextElementSibling; // The project-details div
+                    const actionButtons = details.nextElementSibling; // The action-buttons-bottom div
+
+                    if (details.style.display === "grid") {
+                        details.style.display = "none";
+                        if (actionButtons) actionButtons.style.display = "none";
+                    } else {
+                        details.style.display = "grid";
+                        if (actionButtons) actionButtons.style.display = "flex";
+                    }
+                });
+            });
+
+            // Initialize the first project details to be open
+            const firstProjectDetails = document.querySelector('.project-details');
+            if (firstProjectDetails) {
+                firstProjectDetails.style.display = 'grid';
+                firstProjectDetails.previousElementSibling.classList.add('expanded');
+                const firstActionButtons = firstProjectDetails.nextElementSibling;
+                if (firstActionButtons) {
+                    firstActionButtons.style.display = 'flex';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

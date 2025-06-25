@@ -1,0 +1,23 @@
+<!-- Trigger button (for demo) -->
+<button onclick="openModal()" style="display:none;" id="openModalBtn">Open Modal</button>
+
+<!-- Modal Overlay and Content -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-content">
+    <h2>Update Call Details</h2>
+    <form>
+      <div class="radio-group">
+        <label><input type="radio" name="callStatus" value="talk"> Talk</label>
+        <label><input type="radio" name="callStatus" value="notTalk"> Not Talk</label>
+        <label><input type="radio" name="callStatus" value="delete"> Delete Client’s Profile</label>
+      </div>
+      <div class="modal-form-row">
+        <label for="comment" style="display:block; margin-bottom:8px;">Comment</label>
+        <textarea id="comment" rows="5" style="width:100%;"></textarea>
+      </div>
+      <div style="text-align:center; margin-top:24px;">
+        <button type="submit" class="update-btn">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Graphura - Sales Report</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="icons/logo.png" alt="Graphura Logo">
+      <div class="subtitle"></div>
+    </div>
+    <div class="profile">
+      <div class="avatar"></div>
+      <div>
+        <div class="name">Name</div>
+        <div class="role">Sales Executive</div>
+      </div>
+    </div>
+    <nav>
+      <a href="deshboard.html">&#8962; Dashboard</a>
+      <a href="user-data2.html">&#128100; User Data</a>
+      <a href="prospect.html">&#8635; Prospect</a>
+      <a href="report.html">&#128196; Report</a>
+      <a class="active" href="#">&#128200; Sales Report</a>
+    </nav>
+  </div>
+  <div class="main">
+    <header>
+      <div class="header-actions">
+        <button>Proposals</button>
+        <button>Custom Plan</button>
+        <button>Work Order</button>
+        <script>
+function toggleDropdown() {
+  var menu = document.getElementById('profileDropdown');
+  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+
+// Optional: Hide dropdown when clicking outside
+window.onclick = function(event) {
+  if (!event.target.matches('.profile-btn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-menu");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.style.display === 'block') {
+        openDropdown.style.display = 'none';
+      }
+    }
+  }
+}
+</script>
+<div class="profile-dropdown">
+  <button class="profile-btn" onclick="toggleDropdown()">
+    <span style="margin-right:6px;">&#128100;</span> My Profile &#9662;
+  </button>
+  <div class="dropdown-menu" id="profileDropdown">
+    <a href="#"><span style="margin-right:8px;">&#128100;</span> My Profile</a>
+    <a href="#"><span style="margin-right:8px;">&#128273;</span> Change Password</a>
+    <a href="#"><span style="margin-right:8px;">&#10162;</span> Logout</a>
+  </div>
+</div>
+      </div>
+    </header>
+    <h1>Sales Report</h1>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Company Name</th>
+            <th>Client Name</th>
+            <th>Email_id</th>
+            <th>Contact no.</th>
+            <th>Services</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+           
+            <td><b>Bold text column</b></td>
+             <td><b>Select</b></td>
+          </tr>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+          </tr>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+          </tr>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+          </tr>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+          </tr>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

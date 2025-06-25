@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Graphura - User Data</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="icons/logo.png" alt="Graphura Logo">
+      <div class="subtitle"></div>
+    </div>
+    <div class="profile">
+      <div class="avatar"></div>
+      <div>
+        <div class="name">Name</div>
+        <div class="role">Sales Executive</div>
+      </div>
+    </div>
+    <nav>
+      <a href="deshboard.html">&#8962; Dashboard</a>
+      <a class="active" href="user-data.html">&#128100; User Data</a>
+      <a href="prospect.html">&#8635; Prospect</a>
+      <a href="report.html">&#128196; Report</a>
+      <a href="sales-report.html">&#128200; Sales Report</a>
+    </nav>
+  </div>
+  <div class="main">
+    <header>
+      <div class="header-actions">
+        <button>Proposals</button>
+        <button>Custom Plan</button>
+        <button>Work Order</button>
+       
+<div class="profile-dropdown">
+  <button class="profile-btn" onclick="toggleDropdown()">
+    <span style="margin-right:6px;">&#128100;</span> My Profile &#9662;
+  </button>
+  <div class="dropdown-menu" id="profileDropdown">
+    <a href="#"><span style="margin-right:8px;">&#128100;</span> My Profile</a>
+    <a href="#"><span style="margin-right:8px;">&#128273;</span> Change Password</a>
+    <a href="#"><span style="margin-right:8px;">&#10162;</span> Logout</a>
+  </div>
+</div>
+      </div>
+    </header>
+    <h1>User Data</h1>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Company Name</th>
+            <th>Client Name</th>
+            <th>Email_id</th>
+            <th>Contact no.</th>
+            <th>Reminder date</th>
+            <th>Activity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+    <!-- Modal Overlay and Content -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-content">
+    <h2>Update Call Details</h2>
+    <form>
+      <div class="radio-group">
+        <label><input type="radio" name="callStatus" value="talk"> Talk</label>
+        <label><input type="radio" name="callStatus" value="notTalk"> Not Talk</label>
+        <label><input type="radio" name="callStatus" value="delete"> Delete Client’s Profile</label>
+      </div>
+      <div class="modal-form-row">
+        <label for="comment" style="display:block; margin-bottom:8px;">Comment</label>
+        <textarea id="comment" rows="5" style="width:100%;"></textarea>
+      </div>
+      <div style="text-align:center; margin-top:24px;">
+        <button type="submit" class="update-btn">Update</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+   <script>
+
+
+    function openModal() {
+  document.getElementById('modalOverlay').style.display = 'flex';
+}
+function closeModal() {
+  document.getElementById('modalOverlay').style.display = 'none';
+}
+// Optional: Close modal when clicking outside the modal content
+document.getElementById('modalOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+window.onclick = function() {
+  openModal();
+};
+
+
+function toggleDropdown() {
+  var menu = document.getElementById('profileDropdown');
+  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+
+// Optional: Hide dropdown when clicking outside
+window.onclick = function(event) {
+  if (!event.target.matches('.profile-btn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-menu");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.style.display === 'block') {
+        openDropdown.style.display = 'none';
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>

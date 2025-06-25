@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Graphura - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="icons/logo.png" alt="Graphura Logo">
+      <div class="subtitle"></div>
+    </div>
+    <div class="profile">
+      <div class="avatar"></div>
+      <div>
+        <div class="name">Name</div>
+        <div class="role">TL - Sales</div>
+      </div>
+    </div>
+    <nav>
+      <a class="active" href="#">
+        <!-- Dashboard SVG -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <path d="M3 12L12 3l9 9" stroke="#fff" stroke-width="2" fill="none"/>
+          <path d="M9 21V12h6v9" stroke="#fff" stroke-width="2" fill="none"/>
+        </svg>
+        Dashboard
+      </a>
+      <a href="totalsales.html">
+        <!-- Total Sales SVG (Bar Chart) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <rect x="4" y="10" width="3" height="7" rx="1" stroke="#fff" stroke-width="2"/>
+          <rect x="10.5" y="7" width="3" height="10" rx="1" stroke="#fff" stroke-width="2"/>
+          <rect x="17" y="4" width="3" height="13" rx="1" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Total Sales
+      </a>
+      <a href="prospect.html">
+        <!-- Prospect SVG (Refresh) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <path d="M4 4v5h5" stroke="#fff" stroke-width="2"/>
+          <path d="M20 20v-5h-5" stroke="#fff" stroke-width="2"/>
+          <path d="M5 19A9 9 0 0 1 19 5" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Prospect
+      </a>
+      <a href="tlreport.html">
+        <!-- Report SVG (Document) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <rect x="4" y="4" width="16" height="16" rx="2" stroke="#fff" stroke-width="2"/>
+          <path d="M8 8h8M8 12h8M8 16h4" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Report
+      </a>
+      <a href="teammember.html">
+        <!-- Team Member SVG (Users) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <circle cx="8" cy="8" r="4" stroke="#fff" stroke-width="2"/>
+          <circle cx="16" cy="8" r="4" stroke="#fff" stroke-width="2"/>
+          <path d="M2 20c0-4 6-4 6-4s6 0 6 4" stroke="#fff" stroke-width="2"/>
+          <path d="M14 20c0-4 6-4 6-4" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Team Member
+      </a>
+      <a href="transferdata.html">
+        <!-- Transfer Data SVG (Arrow) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <path d="M4 12h16M16 8l4 4-4 4" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Transfer Data
+      </a>
+      <a href="untouched-data.html">
+        <!-- Untouched Data SVG (Feather) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <path d="M4 20c0-8 8-16 16-16" stroke="#fff" stroke-width="2"/>
+          <path d="M4 20c8 0 16-8 16-16" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Untouched Data
+      </a>
+      <a href="prospectfrm.html">
+        <!-- Prospect Form SVG (Clipboard) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <rect x="6" y="4" width="12" height="16" rx="2" stroke="#fff" stroke-width="2"/>
+          <path d="M9 2h6v4H9z" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Prospect Form
+      </a>
+    </nav>
+  </div>
+  <div class="main">
+    <header>
+      <div class="header-actions">
+        <button>Proposals</button>
+        <button>Custom Plan</button>
+        <button>Work Order</button>
+        <script>
+        function toggleDropdown() {
+  var menu = document.getElementById('profileDropdown');
+  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+
+// Optional: Hide dropdown when clicking outside
+window.onclick = function(event) {
+  if (!event.target.matches('.profile-btn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-menu");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.style.display === 'block') {
+        openDropdown.style.display = 'none';
+      }
+    }
+  }
+}
+</script>
+        <div class="profile-dropdown">
+  <button class="profile-btn" onclick="toggleDropdown()">
+    <span style="margin-right:6px;">&#128100;</span> My Profile &#9662;
+  </button>
+  <div class="dropdown-menu" id="profileDropdown">
+     <a href="#"><span style="margin-right:8px;">&#128100;</span> My Profile</a>
+    <a href="changepassword.html"><span style="margin-right:8px;">&#128273;</span> Change Password</a>
+    <a href="#"><span style="margin-right:8px;">&#10162;</span> Logout</a>
+    </div>
+    </div>
+      </div>
+    </header>
+    <h1>Dashboard</h1>
+    <div class="stats">
+      <div class="stat blue">
+        <div class="stat-title">TEAM MEMBER</div>
+        <div class="stat-value">10</div>
+        <div class="stat-icon">
+          <!-- Users SVG -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+            <circle cx="8" cy="8" r="4" stroke="#2d4fd7" stroke-width="2"/>
+            <circle cx="16" cy="8" r="4" stroke="#2d4fd7" stroke-width="2"/>
+            <path d="M2 20c0-4 6-4 6-4s6 0 6 4" stroke="#2d4fd7" stroke-width="2"/>
+            <path d="M14 20c0-4 6-4 6-4" stroke="#2d4fd7" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+      <div class="stat green">
+        <div class="stat-title">TOTAL CALL BY TEAM</div>
+        <div class="stat-value">1600</div>
+        <div class="stat-icon">
+          <!-- Phone SVG -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+            <path d="M22 16.92V21a1 1 0 0 1-1.09 1A19.91 19.91 0 0 1 3 5.09 1 1 0 0 1 4 4h4.09a1 1 0 0 1 1 .75l1.13 4.52a1 1 0 0 1-.29 1L8.21 12.21a16 16 0 0 0 6.59 6.59l1.94-1.94a1 1 0 0 1 1-.29l4.52 1.13a1 1 0 0 1 .75 1z" stroke="#1ecb81" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+      <div class="stat cyan">
+        <div class="stat-title">TOTAL PROSPECT</div>
+        <div class="stat-value">8000</div>
+        <div class="stat-icon">
+          <!-- Refresh SVG -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+            <path d="M4 4v5h5" stroke="#00bcd4" stroke-width="2"/>
+            <path d="M20 20v-5h-5" stroke="#00bcd4" stroke-width="2"/>
+            <path d="M5 19A9 9 0 0 1 19 5" stroke="#00bcd4" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+      <div class="stat yellow">
+        <div class="stat-title">TOTAL CLIENT DATA</div>
+        <div class="stat-value">16</div>
+        <div class="stat-icon">
+          <!-- File SVG -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+            <rect x="4" y="4" width="16" height="16" rx="2" stroke="#ffb300" stroke-width="2"/>
+            <path d="M8 8h8M8 12h8M8 16h4" stroke="#ffb300" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Total Call</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Company Name</th>
+            <th>Client Name</th>
+            <th>Email_id</th>
+            <th>Contact no.</th>
+            <th>Reminder date</th>
+            <th>Activity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

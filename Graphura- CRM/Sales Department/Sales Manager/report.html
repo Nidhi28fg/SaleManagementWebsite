@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Graphura - Report</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Futura', Arial, sans-serif;
+    }
+
+    .filter-row {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 24px;
+      margin-top: 16px;
+    }
+
+    .filter-row select {
+      min-width: 320px;
+      padding: 12px 14px;
+      font-size: 16px;
+      border: 1.5px solid #e0e7ef;
+      border-radius: 7px;
+      background: #fafbfc;
+    }
+
+    .filter-row button {
+      height: 44px;
+      background: #2d4fd7;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0 32px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-left: 12px;
+    }
+
+    .filter-row button:hover {
+      background: #1e357a;
+    }
+
+    @media (max-width: 900px) {
+      .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+      }
+
+      .filter-row select,
+      .filter-row button {
+        min-width: 0;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="icons/logo.png" alt="Graphura Logo">
+      <div class="subtitle"></div>
+    </div>
+    <div class="profile">
+      <div class="avatar"></div>
+      <div>
+        <div class="name">Name</div>
+        <div class="role">Manager - Sales</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#"><span>🏠</span> Dashboard</a>
+      <a href="totalsales.html"><span>📊</span> Total Sales</a>
+      <a href="totalprospect.html"><span>📈</span> Total Prospect</a>
+      <a class="active" href="report.html"><span>📄</span> Report</a>
+      <a href="managerreport.html"><span>📋</span> Manager Report</a>
+      <a href="teammember.html"><span>👥</span> Team Member</a>
+      <a href="transferdata.html"><span>🔄</span> Transfer Data</a>
+      <a href="transferdatafin.html"><span>🏦</span> Transfer Data to Fin.</a>
+      <a href="untouched-data.html"><span>🦚</span> Untouched Data</a>
+      <a href="prospectfrm.html"><span>📝</span> Prospect Form</a>
+      <a href="salary.html"><span>₹</span> Salary</a>
+    </nav>
+  </div>
+  <div class="main">
+    <header>
+      <div class="header-actions">
+        <button>Proposals</button>
+        <button>Custom Plan</button>
+        <button>Work Order</button>
+        <button class="profile-btn">&#128100; My Profile &#9662;</button>
+      </div>
+    </header>
+    <h1>Report</h1>
+    <form class="filter-row">
+      <select>
+        <option>Day</option>
+      </select>
+      <select>
+        <option>Team Leader Name</option>
+      </select>
+      <button type="submit">Search</button>
+    </form>
+    <div class="card">
+      <!-- Main Content -->
+      <main style="flex: 1;">
+       
+        <section>
+          <h2>Total Prospect</h2>
+          <div style="display: flex; gap: 20px;">
+            <select>
+              <option>Month</option>
+            </select>
+            <select>
+              <option>Team Leader Name</option>
+            </select>
+            <button>Search</button>
+          </div>
+          <table border="1" cellpadding="5" cellspacing="0" style="margin-top: 20px; width: 100%;">
+            <thead>
+              <tr>
+                <th>Company Name</th>
+                <th>Client Name</th>
+                <th>Email_id</th>
+                <th>Contact no.</th>
+                <th>TL Name</th>
+                <th>Sales Executive</th>
+                <th>Activity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Repeat this row as needed -->
+              <tr>
+                <td><b>Bold text column</b></td>
+                <td><b>Bold text column</b></td>
+                <td><b>Bold text column</b></td>
+                <td><b>Bold text column</b></td>
+                <td><b>Bold text column</b></td>
+                <td><b>Bold text column</b></td>
+                <td><button>Update</button></td>
+              </tr>
+              <tr>
+                <td><b>Bold text column</b></td>
+                <td><b>Bold text column</b></td>
+                <td><b>Bold text column</b></td>
+                <td><b>Bold text column</b></td>
+                <td><b>Bold text column</b></td>
+                <td><b>Bold text column</b></td>
+                <td><button>Update</button></td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>

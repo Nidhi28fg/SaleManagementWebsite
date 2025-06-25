@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Graphura - Prospect</title>
+  <link rel="stylesheet" href="style.css"> <!-- Use your existing CSS file -->
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="icons/logo.png" alt="Graphura Logo">
+      <div class="subtitle"></div>
+    </div>
+    <div class="profile">
+      <div class="avatar"></div>
+      <div>
+        <div class="name">Name</div>
+        <div class="role">Sales Executive</div>
+      </div>
+    </div>
+    <nav>
+      <a href="deshboard.html">&#8962; Dashboard</a>
+      <a href="user-data2.html">&#128100; User Data</a>
+      <a class="active" href="#">&#8635; Prospect</a>
+      <a href="report.html">&#128196; Report</a>
+      <a href="sales-report.html">&#128200; Sales Report</a>
+    </nav>
+  </div>
+  <div class="main">
+    <header>
+      <div class="header-actions">
+        <button>Proposals</button>
+        <button>Custom Plan</button>
+        <button>Work Order</button>
+        <script>
+function toggleDropdown() {
+  var menu = document.getElementById('profileDropdown');
+  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+
+// Optional: Hide dropdown when clicking outside
+window.onclick = function(event) {
+  if (!event.target.matches('.profile-btn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-menu");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.style.display === 'block') {
+        openDropdown.style.display = 'none';
+      }
+    }
+  }
+}
+</script>
+<div class="profile-dropdown">
+  <button class="profile-btn" onclick="toggleDropdown()">
+    <span style="margin-right:6px;">&#128100;</span> My Profile &#9662;
+  </button>
+  <div class="dropdown-menu" id="profileDropdown">
+    <a href="#"><span style="margin-right:8px;">&#128100;</span> My Profile</a>
+    <a href="#"><span style="margin-right:8px;">&#128273;</span> Change Password</a>
+    <a href="#"><span style="margin-right:8px;">&#10162;</span> Logout</a>
+  </div>
+</div>
+      </div>
+    </header>
+    <h1>Prospect</h1>
+    <div class="card card1">
+      <form class="prospect-form">
+        <div class="form-row">
+          <label for="company">Company Name</label>
+          <input type="text" id="company" name="company">
+        </div>
+        <div class="form-row">
+          <label for="client">Client Name</label>
+          <input type="text" id="client" name="client">
+        </div>
+        <div class="form-row">
+          <label for="email">Email_id</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="form-row">
+          <label for="contact">Contact no.</label>
+          <input type="text" id="contact" name="contact">
+        </div>
+        <div class="form-row">
+          <label for="reminder">Reminder Date</label>
+          <input type="text" id="reminder" name="reminder">
+        </div>
+        <div class="form-row">
+          <label for="comment">Comment</label>
+          <textarea id="comment" name="comment" rows="4"></textarea>
+        </div>
+        <div class="form-row" style="justify-content: flex-end;">
+          <button type="submit" class="update-btn">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

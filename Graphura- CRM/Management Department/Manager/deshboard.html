@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="sidebar">
+        <img src="icons/logo.png" alt="Graphura Logo" class="logo">
+        <div class="user-profile">
+            <img src="icons/user.png" alt="User Profile Picture">
+            <div class="text-content">
+                <h3>Kamal Yadav</h3>
+                <p>Manager - Management</p>
+            </div>
+        </div>
+        <nav class="sidebar-menu">
+            <ul>
+                <li><a href="#" class="active"><span class="icon icon-dashboard"></span> Dashboard</a></li>
+                <li><a href="total-projects.html"><span class="icon icon-total-projects"></span> Total Projects</a></li>
+                <li><a href="working projects.html"><span class="icon icon-working-projects"></span> Working
+                        Projects</a></li>
+                <li><a href="teammember.html"><span class="icon icon-team-members"></span> Team Members</a></li>
+                <li><a href="managerreport.html"><span class="icon icon-manager-report"></span> Manager Report</a></li>
+                <li><a href="teamreport.html"><span class="icon icon-team-report"></span> Team Report</a></li>
+                <li><a href="received-data.html"><span class="icon icon-received-data"></span> Received Data</a></li>
+                <li><a href="transferfdbk.html"><span class="icon icon-transfer-data"></span> Transfer Data to FDBK.</a>
+                </li>
+                <li><a href="review.html"><span class="icon icon-review"></span> Review</a></li>
+                <li><a href="salary.html"><span class="icon icon-salary"></span> Salary</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header class="header">
+            <div class="header-buttons">
+                <a href="#">Proposals</a>
+                <a href="#">Custom Plan</a>
+                <a href="#">Work Order</a>
+                <div class="dropdown">
+                    <button class="dropdown-button">
+                        <img src="" alt="" style="border-radius: 50%; margin-right: 5px;"> My Profile <span
+                            class="dropdown-arrow"></span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Profile Settings</a>
+                        <a href="#">Change Password</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <h1>Dashboard</h1>
+        <div class="dashboard-grid">
+            <div class="card" style="border-left: 7px solid #2d4fd7;">
+                <div class="card-header">TOTAL PROJECTS</div>
+                <div class="card-value">
+                    10
+                    <span class="icon-lg icon-card-projects"></span>
+                </div>
+            </div>
+          <div class="card" style="border-left: 7px solid #1cc88a;">
+                <div class="card-header">CURRENT PROJECTS</div>
+                <div class="card-value">
+                    1600
+                    <span class="icon-lg icon-card-projects"></span>
+                </div>
+            </div>
+           <div class="card" style="border-left: 7px solid #36b9cc;">
+                <div class="card-header">COMPLETED PROJECTS</div>
+                <div class="card-value">
+                    8000
+                    <span class="icon-lg icon-card-completed"></span>
+                </div>
+            </div>
+              <div class="card" style="border-left: 7px solid #f6c23e;">
+                <div class="card-header">REMAINING PROJECTS</div>
+                <div class="card-value">
+                    16
+                    <span class="icon-lg icon-card-remaining"></span>
+                </div>
+            </div>
+
+            <div class="card" style="border-left: 7px solid #2d4fd7;">
+                <div class="card-header">TOTAL EMPLOYEES</div>
+                <div class="card-value">
+                    10
+                    <span class="icon-lg icon-card-employees"></span>
+                </div>
+            </div>
+           <div class="card" style="border-left: 7px solid #1cc88a;">
+                <div class="card-header">TOTAL TLS</div>
+                <div class="card-value">
+                    1600
+                    <span class="icon-lg icon-card-tls"></span>
+                </div>
+            </div>
+            <div class="card" style="border-left: 7px solid #36b9cc;">
+                <div class="card-header">TOTAL INCOME</div>
+                <div class="card-value">
+                    <span class="currency-icon">₹</span>8000
+                    <span class="icon-lg icon-card-income"></span>
+                </div>
+            </div>
+             <div class="card" style="border-left: 7px solid #f6c23e;">
+                <div class="card-header">LAST MONTH INCOME</div>
+                <div class="card-value">
+                    <span class="currency-icon">₹</span>16
+                    <span class="icon-lg icon-card-income"></span>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="feedback-department">Feedback Department</h1>
+        <div class="dashboard-grid">
+            <div class="card" style="border-left: 7px solid #2d4fd7;">
+                <div class="card-header">TOTAL CLIENT RECEIVED</div>
+                <div class="card-value">
+                    10
+                    <span class="icon-lg icon-card-client-received"></span>
+                </div>
+            </div>
+            <div class="card" style="border-left: 7px solid #1cc88a;">
+                <div class="card-header">DELAY PROJECTS</div>
+                <div class="card-value">
+                    1600
+                    <span class="icon-lg icon-card-delay-projects"></span>
+                </div>
+            </div>
+            <div class="card" style="border-left: 7px solid #36b9cc;">
+                <div class="card-header">TOTAL INCOME</div>
+                <div class="card-value">
+                    <span class="currency-icon">₹</span>8000
+                    <span class="icon-lg icon-card-income"></span>
+                </div>
+            </div>
+            <div class="card" style="border-left: 7px solid #f6c23e;">
+                <div class="card-header">TOTAL IMPORT DATA</div>
+                <div class="card-value">
+                    16
+                    <span class="icon-lg icon-card-import-data"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

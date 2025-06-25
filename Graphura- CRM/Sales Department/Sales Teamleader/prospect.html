@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Graphura - Prospect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="icons/logo.png" alt="Graphura Logo">
+      <div class="subtitle"></div>
+    </div>
+    <div class="profile">
+      <div class="avatar"></div>
+      <div>
+        <div class="name">Name</div>
+        <div class="role">TL - Sales</div>
+      </div>
+    </div>
+    <nav>
+      <a href="deshboard.html">
+        <!-- Dashboard SVG -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <path d="M3 12L12 3l9 9" stroke="#fff" stroke-width="2" fill="none"/>
+          <path d="M9 21V12h6v9" stroke="#fff" stroke-width="2" fill="none"/>
+        </svg>
+        Dashboard
+      </a>
+      <a href="totalsales.html">
+        <!-- Total Sales SVG (Bar Chart) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <rect x="4" y="10" width="3" height="7" rx="1" stroke="#fff" stroke-width="2"/>
+          <rect x="10.5" y="7" width="3" height="10" rx="1" stroke="#fff" stroke-width="2"/>
+          <rect x="17" y="4" width="3" height="13" rx="1" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Total Sales
+      </a>
+      <a class="active" href="#">
+        <!-- Prospect SVG (Refresh) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <path d="M4 4v5h5" stroke="#fff" stroke-width="2"/>
+          <path d="M20 20v-5h-5" stroke="#fff" stroke-width="2"/>
+          <path d="M5 19A9 9 0 0 1 19 5" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Prospect
+      </a>
+      <a href="tlreport.html">
+        <!-- Report SVG (Document) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <rect x="4" y="4" width="16" height="16" rx="2" stroke="#fff" stroke-width="2"/>
+          <path d="M8 8h8M8 12h8M8 16h4" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Report
+      </a>
+      <a href="teammember.html">
+        <!-- Team Member SVG (Users) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <circle cx="8" cy="8" r="4" stroke="#fff" stroke-width="2"/>
+          <circle cx="16" cy="8" r="4" stroke="#fff" stroke-width="2"/>
+          <path d="M2 20c0-4 6-4 6-4s6 0 6 4" stroke="#fff" stroke-width="2"/>
+          <path d="M14 20c0-4 6-4 6-4" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Team Member
+      </a>
+      <a href="transferdata.html">
+        <!-- Transfer Data SVG (Arrow) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <path d="M4 12h16M16 8l4 4-4 4" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Transfer Data
+      </a>
+      <a href="untouched-data.html">
+        <!-- Untouched Data SVG (Feather) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <path d="M4 20c0-8 8-16 16-16" stroke="#fff" stroke-width="2"/>
+          <path d="M4 20c8 0 16-8 16-16" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Untouched Data
+      </a>
+      <a href="prospectfrm.html">
+        <!-- Prospect Form SVG (Clipboard) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <rect x="6" y="4" width="12" height="16" rx="2" stroke="#fff" stroke-width="2"/>
+          <path d="M9 2h6v4H9z" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Prospect Form
+      </a>
+    </nav>
+  </div>
+  <div class="main">
+    <header>
+      <div class="header-actions">
+        <button>Proposals</button>
+        <button>Custom Plan</button>
+        <button>Work Order</button>
+        <script>
+        function toggleDropdown() {
+  var menu = document.getElementById('profileDropdown');
+  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+
+// Optional: Hide dropdown when clicking outside
+window.onclick = function(event) {
+  if (!event.target.matches('.profile-btn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-menu");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.style.display === 'block') {
+        openDropdown.style.display = 'none';
+      }
+    }
+  }
+}
+</script>
+        <div class="profile-dropdown">
+  <button class="profile-btn" onclick="toggleDropdown()">
+    <span style="margin-right:6px;">&#128100;</span> My Profile &#9662;
+  </button>
+  <div class="dropdown-menu" id="profileDropdown">
+     <a href="#"><span style="margin-right:8px;">&#128100;</span> My Profile</a>
+    <a href="changepassword.html"><span style="margin-right:8px;">&#128273;</span> Change Password</a>
+    <a href="#"><span style="margin-right:8px;">&#10162;</span> Logout</a>
+    </div>
+    </div>
+      </div>
+    </header>
+    <h1>Prospect</h1>
+    <div style="display:flex;align-items:center;gap:18px;margin-bottom:24px;">
+      <select style="min-width:220px;padding:12px 14px;font-size:16px;border:1.5px solid #e0e7ef;border-radius:7px;background:#fafbfc;">
+        <option>Member Name</option>
+      </select>
+      <select style="min-width:220px;padding:12px 14px;font-size:16px;border:1.5px solid #e0e7ef;border-radius:7px;background:#fafbfc;">
+        <option>Select Date</option>
+      </select>
+      <button class="update-btn" style="height:44px;margin-left:12px;">Search</button>
+    </div>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Company Name</th>
+            <th>Client Name</th>
+            <th>Email_id</th>
+            <th>Contact no.</th>
+            <th>Reminder date</th>
+            <th>Activity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

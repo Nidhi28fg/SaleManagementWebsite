@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Graphura - Team Member</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add these styles if not already present in your style.css */
+    .status-badge {
+      display: inline-block;
+      padding: 4px 16px;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: center;
+    }
+    .status-active {
+      background: #22c55e;
+    }
+    .status-inactive {
+      background: #ef4444;
+    }
+    .team-form {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .team-form-row {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .team-form-row label {
+      flex: 0 0 180px;
+      font-size: 18px;
+      color: #222;
+    }
+    .team-form-row input {
+      flex: 1;
+      padding: 12px 14px;
+      font-size: 16px;
+      border: 1.5px solid #e0e7ef;
+      border-radius: 7px;
+      background: #fafbfc;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .team-form-row input:focus {
+      border: 1.5px solid #2d4fd7;
+      background: #fff;
+    }
+    .team-form-row:last-child {
+      justify-content: flex-end;
+    }
+    .add-btn {
+      background: #2d4fd7;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 32px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .add-btn:hover {
+      background: #1e357a;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="icons/logo.png" alt="Graphura Logo">
+      <div class="subtitle"></div>
+    </div>
+    <div class="profile">
+      <div class="avatar"></div>
+      <div>
+        <div class="name">Name</div>
+        <div class="role">TL - Sales</div>
+      </div>
+    </div>
+    <nav>
+      <a href="deshboard.html">
+        <!-- Dashboard SVG -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <path d="M3 12L12 3l9 9" stroke="#fff" stroke-width="2" fill="none"/>
+          <path d="M9 21V12h6v9" stroke="#fff" stroke-width="2" fill="none"/>
+        </svg>
+        Dashboard
+      </a>
+      <a href="totalsales.html">
+        <!-- Total Sales SVG (Bar Chart) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <rect x="4" y="10" width="3" height="7" rx="1" stroke="#fff" stroke-width="2"/>
+          <rect x="10.5" y="7" width="3" height="10" rx="1" stroke="#fff" stroke-width="2"/>
+          <rect x="17" y="4" width="3" height="13" rx="1" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Total Sales
+      </a>
+      <a href="prospect.html">
+        <!-- Prospect SVG (Refresh) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <path d="M4 4v5h5" stroke="#fff" stroke-width="2"/>
+          <path d="M20 20v-5h-5" stroke="#fff" stroke-width="2"/>
+          <path d="M5 19A9 9 0 0 1 19 5" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Prospect
+      </a>
+      <a href="tlreport.html">
+        <!-- Report SVG (Document) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <rect x="4" y="4" width="16" height="16" rx="2" stroke="#fff" stroke-width="2"/>
+          <path d="M8 8h8M8 12h8M8 16h4" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Report
+      </a>
+      <a class="active" href="#">
+        <!-- Team Member SVG (Users) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <circle cx="8" cy="8" r="4" stroke="#fff" stroke-width="2"/>
+          <circle cx="16" cy="8" r="4" stroke="#fff" stroke-width="2"/>
+          <path d="M2 20c0-4 6-4 6-4s6 0 6 4" stroke="#fff" stroke-width="2"/>
+          <path d="M14 20c0-4 6-4 6-4" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Team Member
+      </a>
+      <a href="transferdata.html">
+        <!-- Transfer Data SVG (Arrow) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <path d="M4 12h16M16 8l4 4-4 4" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Transfer Data
+      </a>
+      <a href="untouched-data.html">
+        <!-- Untouched Data SVG (Feather) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <path d="M4 20c0-8 8-16 16-16" stroke="#fff" stroke-width="2"/>
+          <path d="M4 20c8 0 16-8 16-16" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Untouched Data
+      </a>
+      <a href="prospectfrm.html">
+        <!-- Prospect Form SVG (Clipboard) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="margin-right:12px;vertical-align:middle;">
+          <rect x="6" y="4" width="12" height="16" rx="2" stroke="#fff" stroke-width="2"/>
+          <path d="M9 2h6v4H9z" stroke="#fff" stroke-width="2"/>
+        </svg>
+        Prospect Form
+      </a>
+    </nav>
+  </div>
+  <div class="main">
+    <header>
+      <div class="header-actions">
+        <button>Proposals</button>
+        <button>Custom Plan</button>
+        <button>Work Order</button>
+                <script>
+        function toggleDropdown() {
+  var menu = document.getElementById('profileDropdown');
+  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+
+// Optional: Hide dropdown when clicking outside
+window.onclick = function(event) {
+  if (!event.target.matches('.profile-btn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-menu");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.style.display === 'block') {
+        openDropdown.style.display = 'none';
+      }
+    }
+  }
+}
+</script>
+        <div class="profile-dropdown">
+  <button class="profile-btn" onclick="toggleDropdown()">
+    <span style="margin-right:6px;">&#128100;</span> My Profile &#9662;
+  </button>
+  <div class="dropdown-menu" id="profileDropdown">
+     <a href="#"><span style="margin-right:8px;">&#128100;</span> My Profile</a>
+    <a href="changepassword.html"><span style="margin-right:8px;">&#128273;</span> Change Password</a>
+    <a href="#"><span style="margin-right:8px;">&#10162;</span> Logout</a>
+    </div>
+    </div>
+      </div>
+    </header>
+    <h1>Team Member</h1>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Email_id</th>
+            <th>Contact no.</th>
+            <th>Joining date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><span class="status-badge status-active">Active</span></td>
+          </tr>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><span class="status-badge status-inactive">Inactive</span></td>
+          </tr>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><span class="status-badge status-active">Active</span></td>
+          </tr>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><span class="status-badge status-active">Active</span></td>
+          </tr>
+          <tr>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><span class="status-badge status-inactive">Inactive</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <form class="team-form">
+        <div class="team-form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name">
+        </div>
+        <div class="team-form-row">
+          <label for="contact">Contact no.</label>
+          <input type="text" id="contact" name="contact">
+        </div>
+        <div class="team-form-row">
+          <label for="email">Email_id</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="team-form-row">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location">
+        </div>
+        <div class="team-form-row">
+          <label for="joining">Joining date</label>
+          <input type="text" id="joining" name="joining">
+        </div>
+        <div class="team-form-row">
+          <button type="submit" class="add-btn">ADD</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

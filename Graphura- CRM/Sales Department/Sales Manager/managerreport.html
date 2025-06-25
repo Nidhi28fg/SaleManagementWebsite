@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Graphura - Manager Report</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Futura', Arial, sans-serif; }
+    .stats {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .stat {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
+      padding: 24px 32px;
+      min-width: 210px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-bottom: 4px solid transparent;
+      position: relative;
+    }
+    .stat .stat-title {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #555;
+    }
+    .stat .stat-value {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .stat .stat-icon {
+      position: absolute;
+      right: 24px;
+      bottom: 18px;
+      font-size: 32px;
+      opacity: 0.15;
+    }
+    .stat.blue { border-bottom: 4px solid #2d4fd7; }
+    .stat.green { border-bottom: 4px solid #1ecb81; }
+    .stat.cyan { border-bottom: 4px solid #00bcd4; }
+    .stat.yellow { border-bottom: 4px solid #ffb300; }
+    @media (max-width: 900px) {
+      .stats {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="icons/logo.png" alt="Graphura Logo">
+      <div class="subtitle"></div>
+    </div>
+    <div class="profile">
+      <div class="avatar"></div>
+      <div>
+        <div class="name">Name</div>
+        <div class="role">Manager - Sales</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#"><span>🏠</span> Dashboard</a>
+      <a href="totalsales.html"><span>📊</span> Total Sales</a>
+      <a href="totalprospect.html"><span>📈</span> Total Prospect</a>
+      <a href="report.html"><span>📄</span> Report</a>
+      <a class="active" href="managerreport.html"><span>📋</span> Manager Report</a>
+      <a href="teammember.html"><span>👥</span> Team Member</a>
+      <a href="transferdata.html"><span>🔄</span> Transfer Data</a>
+      <a href="transferdatafin.html"><span>🏦</span> Transfer Data to Fin.</a>
+      <a href="untouched-data.html"><span>🦚</span> Untouched Data</a>
+      <a href="prospectfrm.html"><span>📝</span> Prospect Form</a>
+      <a href="salary.html"><span>₹</span> Salary</a>
+    </nav>
+  </div>
+  <div class="main">
+    <header>
+      <div class="header-actions">
+        <button>Proposals</button>
+        <button>Custom Plan</button>
+        <button>Work Order</button>
+        <button class="profile-btn">&#128100; My Profile &#9662;</button>
+      </div>
+    </header>
+    <h1>Manager Report</h1>
+    <div class="stats">
+      <div class="stat blue">
+        <div class="stat-title">TOTAL CLIENT'S DATA</div>
+        <div class="stat-value">300</div>
+        <div class="stat-icon">👥</div>
+      </div>
+      <div class="stat green">
+        <div class="stat-title">TOTAL SALES</div>
+        <div class="stat-value">7</div>
+        <div class="stat-icon">📅</div>
+      </div>
+      <div class="stat cyan">
+        <div class="stat-title">LAST MONTH PAYOUT</div>
+        <div class="stat-value">8000</div>
+        <div class="stat-icon">₹</div>
+      </div>
+      <div class="stat yellow">
+        <div class="stat-title">PROSPECT NUMBER</div>
+        <div class="stat-value">16</div>
+        <div class="stat-icon">🔄</div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Call Logs</h2>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Company Name</th>
+            <th>Client Name</th>
+            <th>Email_id</th>
+            <th>Contact no.</th>
+            <th>Reminder date</th>
+            <th>Activity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+          <tr>
+            <td>⋮</td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><b>Bold text column</b></td>
+            <td><button class="update-btn">Update</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
