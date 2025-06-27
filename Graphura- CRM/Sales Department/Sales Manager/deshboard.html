@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Graphura - Dashboard</title>
   <link rel="stylesheet" href="style.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
   <div class="sidebar">
     <div class="logo">
@@ -38,31 +41,125 @@
         <button>Proposals</button>
         <button>Custom Plan</button>
         <button>Work Order</button>
-        <button class="profile-btn">&#128100; My Profile &#9662;</button>
+        <script>
+          function toggleDropdown() {
+            var menu = document.getElementById('profileDropdown');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+          }
+
+          // Optional: Hide dropdown when clicking outside
+          window.onclick = function (event) {
+            if (!event.target.matches('.profile-btn')) {
+              var dropdowns = document.getElementsByClassName("dropdown-menu");
+              for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.style.display === 'block') {
+                  openDropdown.style.display = 'none';
+                }
+              }
+            }
+          }
+        </script>
+        <div class="profile-dropdown">
+          <button class="profile-btn" onclick="toggleDropdown()">
+            <span style="margin-right:6px;"><i class="fa-solid fa-circle-user"></i></span> My Profile &#9662;
+          </button>
+          <div class="dropdown-menu" id="profileDropdown">
+            <a href="#"><span style="margin-right:8px;"><i class="fa-solid fa-circle-user"></i></span> My Profile</a>
+            <a href="changepassword.html"><span style="margin-right:8px;"><i class="fa-solid fa-lock-open"></i></span>
+              Change Password</a>
+            <a href="#"><span style="margin-right:8px;"><i class="fa-solid fa-right-from-bracket"></i></span> Logout</a>
+          </div>
+        </div>
       </div>
     </header>
     <h1>Dashboard</h1>
     <div class="dashboard-grid">
-      <div class="stat blue"><div class="stat-title">TOTAL SALES</div><div class="stat-value">10</div><div class="stat-icon">📊</div></div>
-      <div class="stat green"><div class="stat-title">LAST MONTH SALES</div><div class="stat-value">1600</div><div class="stat-icon">📊</div></div>
-      <div class="stat cyan"><div class="stat-title">THIS MONTH SALES</div><div class="stat-value">8000</div><div class="stat-icon">📊</div></div>
-      <div class="stat yellow"><div class="stat-title">TODAY'S SALES</div><div class="stat-value">16</div><div class="stat-icon">📊</div></div>
-      <div class="stat blue"><div class="stat-title">TOTAL TRANSFER DATA</div><div class="stat-value">10</div><div class="stat-icon">🔄</div></div>
-      <div class="stat green"><div class="stat-title">TOTAL EMPLOYEE</div><div class="stat-value">1600</div><div class="stat-icon">👥</div></div>
-      <div class="stat cyan"><div class="stat-title">TOTAL TLS</div><div class="stat-value">8000</div><div class="stat-icon">📄</div></div>
-      <div class="stat yellow"><div class="stat-title">TODAY'S PROSPECT</div><div class="stat-value">16</div><div class="stat-icon">🔄</div></div>
-      <div class="stat blue"><div class="stat-title">MONTHLY INCOME</div><div class="stat-value">10</div><div class="stat-icon">₹</div></div>
-      <div class="stat green"><div class="stat-title">LAST MONTH INCOME</div><div class="stat-value">1600</div><div class="stat-icon">₹</div></div>
-      <div class="stat cyan"><div class="stat-title">TOTAL INCOME</div><div class="stat-value">8000</div><div class="stat-icon">₹</div></div>
-      <div class="stat yellow"><div class="stat-title">TOTAL IMPORT DATA</div><div class="stat-value">16</div><div class="stat-icon">📄</div></div>
+      <div class="stat blue">
+        <div class="stat-title">TOTAL SALES</div>
+        <div class="stat-value">10</div>
+        <div class="stat-icon">📊</div>
+      </div>
+      <div class="stat green">
+        <div class="stat-title">LAST MONTH SALES</div>
+        <div class="stat-value">1600</div>
+        <div class="stat-icon">📊</div>
+      </div>
+      <div class="stat cyan">
+        <div class="stat-title">THIS MONTH SALES</div>
+        <div class="stat-value">8000</div>
+        <div class="stat-icon">📊</div>
+      </div>
+      <div class="stat yellow">
+        <div class="stat-title">TODAY'S SALES</div>
+        <div class="stat-value">16</div>
+        <div class="stat-icon">📊</div>
+      </div>
+      <div class="stat blue">
+        <div class="stat-title">TOTAL TRANSFER DATA</div>
+        <div class="stat-value">10</div>
+        <div class="stat-icon">🔄</div>
+      </div>
+      <div class="stat green">
+        <div class="stat-title">TOTAL EMPLOYEE</div>
+        <div class="stat-value">1600</div>
+        <div class="stat-icon">👥</div>
+      </div>
+      <div class="stat cyan">
+        <div class="stat-title">TOTAL TLS</div>
+        <div class="stat-value">8000</div>
+        <div class="stat-icon">📄</div>
+      </div>
+      <div class="stat yellow">
+        <div class="stat-title">TODAY'S PROSPECT</div>
+        <div class="stat-value">16</div>
+        <div class="stat-icon">🔄</div>
+      </div>
+      <div class="stat blue">
+        <div class="stat-title">MONTHLY INCOME</div>
+        <div class="stat-value">10</div>
+        <div class="stat-icon">₹</div>
+      </div>
+      <div class="stat green">
+        <div class="stat-title">LAST MONTH INCOME</div>
+        <div class="stat-value">1600</div>
+        <div class="stat-icon">₹</div>
+      </div>
+      <div class="stat cyan">
+        <div class="stat-title">TOTAL INCOME</div>
+        <div class="stat-value">8000</div>
+        <div class="stat-icon">₹</div>
+      </div>
+      <div class="stat yellow">
+        <div class="stat-title">TOTAL IMPORT DATA</div>
+        <div class="stat-value">16</div>
+        <div class="stat-icon">📄</div>
+      </div>
     </div>
     <h2 style="margin-top:40px;">FINANCE DEPT.</h2>
     <div class="dashboard-grid">
-      <div class="stat blue"><div class="stat-title">TOTAL DATA</div><div class="stat-value">10</div><div class="stat-icon">📄</div></div>
-      <div class="stat green"><div class="stat-title">LAST MONTH INCOME</div><div class="stat-value">1600</div><div class="stat-icon">₹</div></div>
-      <div class="stat cyan"><div class="stat-title">TOTAL INCOME</div><div class="stat-value">8000</div><div class="stat-icon">₹</div></div>
-      <div class="stat yellow"><div class="stat-title">TOTAL IMPORT DATA</div><div class="stat-value">16</div><div class="stat-icon">📄</div></div>
+      <div class="stat blue">
+        <div class="stat-title">TOTAL DATA</div>
+        <div class="stat-value">10</div>
+        <div class="stat-icon">📄</div>
+      </div>
+      <div class="stat green">
+        <div class="stat-title">LAST MONTH INCOME</div>
+        <div class="stat-value">1600</div>
+        <div class="stat-icon">₹</div>
+      </div>
+      <div class="stat cyan">
+        <div class="stat-title">TOTAL INCOME</div>
+        <div class="stat-value">8000</div>
+        <div class="stat-icon">₹</div>
+      </div>
+      <div class="stat yellow">
+        <div class="stat-title">TOTAL IMPORT DATA</div>
+        <div class="stat-value">16</div>
+        <div class="stat-icon">📄</div>
+      </div>
     </div>
   </div>
 </body>
+
 </html>

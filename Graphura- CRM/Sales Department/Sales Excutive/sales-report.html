@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Graphura - Sales Report</title>
+  <title>Graphura Dashboard</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="sidebar">
@@ -19,15 +20,15 @@
       </div>
     </div>
     <nav>
-      <a href="deshboard.html">&#8962; Dashboard</a>
-      <a href="user-data2.html">&#128100; User Data</a>
-      <a href="prospect.html">&#8635; Prospect</a>
-      <a href="report.html">&#128196; Report</a>
-      <a class="active" href="#">&#128200; Sales Report</a>
+      <a  href="deshboard.html"> <i class="fa-solid fa-table-columns"></i> Dashboard</a>
+      <a href="user-data2.html"><i class="fa-solid fa-user-plus"></i> User Data</a>
+      <a href="prospect.html"><i class="fa-solid fa-shield"></i> Prospect</a>
+      <a href="report.html"><i class="fa-solid fa-calendar"></i> Report</a>
+      <a class="active" href="sales-report.html"><i class="fa-solid fa-file-export"></i> Sales Report</a>
     </nav>
   </div>
   <div class="main">
-    <header>
+     <header>
       <div class="header-actions">
         <button>Proposals</button>
         <button>Custom Plan</button>
@@ -51,14 +52,14 @@ window.onclick = function(event) {
   }
 }
 </script>
-<div class="profile-dropdown">
+        <div class="profile-dropdown">
   <button class="profile-btn" onclick="toggleDropdown()">
-    <span style="margin-right:6px;">&#128100;</span> My Profile &#9662;
+    <span style="margin-right:6px;"><i class="fa-solid fa-circle-user"></i></span> My Profile &#9662;
   </button>
   <div class="dropdown-menu" id="profileDropdown">
-    <a href="#"><span style="margin-right:8px;">&#128100;</span> My Profile</a>
-    <a href="#"><span style="margin-right:8px;">&#128273;</span> Change Password</a>
-    <a href="#"><span style="margin-right:8px;">&#10162;</span> Logout</a>
+     <a href="#"><span style="margin-right:8px;"><i class="fa-solid fa-circle-user"></i></span> My Profile</a>
+    <a href="changepassword.html"><span style="margin-right:8px;"><i class="fa-solid fa-lock-open"></i></span> Change Password</a>
+    <a href="#"><span style="margin-right:8px;"><i class="fa-solid fa-right-from-bracket"></i></span> Logout</a>
   </div>
 </div>
       </div>

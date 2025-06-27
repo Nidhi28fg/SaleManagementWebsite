@@ -1,6 +1,8 @@
+
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
+ font-family: 'Futura';
   background: #f8f9fa;
   color: #333;
 }
@@ -159,11 +161,11 @@ h1 {
 }
 
 .stat .stat-icon {
-  position: absolute;
-  right: 24px;
-  bottom: 18px;
-  font-size: 32px;
-  opacity: 0.15;
+    position: absolute;
+    right: 17px;
+    bottom: 18px;
+    font-size: 61px;
+    opacity: 0.;
 }
 
 .stat.blue { border-bottom: 4px solid #2d4fd7; }

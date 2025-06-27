@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Graphura - Prospect</title>
   <link rel="stylesheet" href="style.css"> <!-- Use your existing CSS file -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="sidebar">
@@ -57,14 +58,14 @@ window.onclick = function(event) {
   }
 }
 </script>
-<div class="profile-dropdown">
+        <div class="profile-dropdown">
   <button class="profile-btn" onclick="toggleDropdown()">
-    <span style="margin-right:6px;">&#128100;</span> My Profile &#9662;
+    <span style="margin-right:6px;"><i class="fa-solid fa-circle-user"></i></span> My Profile &#9662;
   </button>
   <div class="dropdown-menu" id="profileDropdown">
-    <a href="#"><span style="margin-right:8px;">&#128100;</span> My Profile</a>
-    <a href="#"><span style="margin-right:8px;">&#128273;</span> Change Password</a>
-    <a href="#"><span style="margin-right:8px;">&#10162;</span> Logout</a>
+     <a href="#"><span style="margin-right:8px;"><i class="fa-solid fa-circle-user"></i></span> My Profile</a>
+    <a href="changepassword.html"><span style="margin-right:8px;"><i class="fa-solid fa-lock-open"></i></span> Change Password</a>
+    <a href="#"><span style="margin-right:8px;"><i class="fa-solid fa-right-from-bracket"></i></span> Logout</a>
   </div>
 </div>
       </div>
